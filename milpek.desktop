@@ -6,6 +6,6 @@ Comment=Program Ekle Kaldır
 Icon=/usr/share/icons/milpek.png
 Exec=lxqt-sudo milpek
 Terminal=false
-Categories=Settings;Qt;
+Categories=System;Settings;Qt;
 Keywords=program;kolay;kur;
 Name[tr_TR]=MilPeK
