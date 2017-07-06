@@ -36,7 +36,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../opt/MEBis-Plymouth/archlinux.png</normaloff>../../../../opt/MEBis-Plymouth/archlinux.png</iconset>
+    <normaloff>/opt/milpek/milpek.png</normaloff>/opt/milpek/milpek.png</iconset>
   </property>
   <property name="windowOpacity">
    <double>4.000000000000000</double>
@@ -106,7 +106,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../../opt/MEBis-Plymouth/mebis-gunes.png</pixmap>
+     <pixmap>/opt/milpek.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
