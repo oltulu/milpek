@@ -48,7 +48,7 @@ void MainWindow::on_commandLinkButton_clicked()
    QString uygulama = ui->comboBox->currentText();
        ui->progressBar->setValue(sayac);
        sayac=50;
-       QProcess::execute("sudo -i mps kur "+uygulama);
+       QProcess::execute("mps kur "+uygulama);
     sayac=100;
     ui->progressBar->setValue(sayac);
          QMessageBox::information(this, "MilPeK",uygulama +" uygulaması başarıyla kuruldu.");
@@ -88,10 +88,11 @@ void MainWindow::on_commandLinkButton_3_clicked()
 {
     sayac=10;
     ui->progressBar->setValue(sayac);
-         sayac=20;
+       
           QString uygulama = ui->comboBox->currentText();
+          sayac=20;
            ui->progressBar->setValue(sayac);
-            sayac=50;
+         
 
            QProcess::execute("mps odkp "+uygulama);
 
