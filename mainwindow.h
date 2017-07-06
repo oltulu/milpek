@@ -34,14 +34,6 @@ private slots:
 
     void on_commandLinkButton_5_clicked();
 
-    void on_listView_activated(const QModelIndex &index);
-
-    void on_listView_entered(const QModelIndex &index);
-
-    void on_listView_pressed(const QModelIndex &index);
-
-    void on_listView_indexesMoved(const QModelIndexList &indexes);
-
     void on_commandLinkButton_4_clicked();
 
 private:
