@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=MilPeK
+Comment=Program Ekle Kaldır
+Icon=/usr/share/icons/milpek.png
+Exec=sudo milpek
+Terminal=false
+Categories=Settings;Qt;
+Keywords=program;kolay;kur;
+Name[tr_TR]=MilPeK
