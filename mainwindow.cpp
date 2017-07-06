@@ -110,7 +110,7 @@ void MainWindow::on_commandLinkButton_5_clicked()
           sayac=50;
           ui->progressBar->setValue(sayac);
 
-           QProcess::execute("mps sil "+uygulama);
+           QProcess::execute("mps -sz "+uygulama);
 
           sayac=100;
           ui->progressBar->setValue(sayac);
