@@ -36,7 +36,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>/opt/milpek/milpek.png</normaloff>/opt/milpek/milpek.png</iconset>
+    <normaloff>/root/arayuz/milpek.png</normaloff>/root/arayuz/milpek.png</iconset>
   </property>
   <property name="windowOpacity">
    <double>4.000000000000000</double>
@@ -46,7 +46,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>60</y>
+      <y>90</y>
       <width>211</width>
       <height>20</height>
      </rect>
@@ -105,9 +105,6 @@
     <property name="text">
      <string/>
     </property>
-    <property name="pixmap">
-     <pixmap>/opt/milpek.png</pixmap>
-    </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
@@ -142,19 +139,6 @@
     </property>
     <property name="text">
      <string>Hakkında</string>
-    </property>
-   </widget>
-   <widget class="QListView" name="listView">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>80</y>
-      <width>211</width>
-      <height>331</height>
-     </rect>
-    </property>
-    <property name="whatsThis">
-     <string extracomment="Yüklü temalar"/>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox_2">
@@ -244,23 +228,13 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>409</y>
+      <y>419</y>
       <width>681</width>
-      <height>91</height>
+      <height>81</height>
      </rect>
     </property>
     <property name="text">
      <string>Hazır</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>350</y>
-      <width>21</width>
-      <height>23</height>
-     </rect>
     </property>
    </widget>
    <widget class="QTextEdit" name="textEdit">
@@ -287,6 +261,13 @@
     <property name="readOnly">
      <bool>true</bool>
     </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Uygulama kategorisi seçtikten sonra, Mevcut uygulamalardan işlem yapmak istediğiniz programı seçerek butonlar yardımıyla işleminizi gerçekleştirebilirsiniz...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="textInteractionFlags">
      <set>Qt::NoTextInteraction</set>
     </property>
@@ -304,21 +285,32 @@
      <string>Sil</string>
     </property>
    </widget>
-   <zorder>comboBox</zorder>
-   <zorder>label</zorder>
-   <zorder>progressBar</zorder>
-   <zorder>label_2</zorder>
-   <zorder>label_5</zorder>
-   <zorder>commandLinkButton</zorder>
-   <zorder>commandLinkButton_2</zorder>
-   <zorder>listView</zorder>
-   <zorder>comboBox_2</zorder>
-   <zorder>label_4</zorder>
-   <zorder>commandLinkButton_3</zorder>
-   <zorder>commandLinkButton_4</zorder>
-   <zorder>label_3</zorder>
-   <zorder>textEdit</zorder>
-   <zorder>commandLinkButton_5</zorder>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>211</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Uygulama Ara</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>111</y>
+      <width>221</width>
+      <height>301</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionBilgi">
