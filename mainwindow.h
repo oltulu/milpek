@@ -27,17 +27,22 @@ private slots:
 
     void on_comboBox_2_currentTextChanged(const QString &arg1);
 
-    void on_listView_clicked(const QModelIndex &index);
-
     void on_commandLinkButton_3_clicked();
 
     void on_commandLinkButton_5_clicked();
 
+
     void on_commandLinkButton_4_clicked();
+
+    void on_lineEdit_textChanged(const QString &arg1);
+
+    void on_listWidget_currentTextChanged(const QString &currentText);
 
 private:
     Ui::MainWindow *ui;
     void TemaYukle();
+    QStringList listem;
+
 
 };
 
