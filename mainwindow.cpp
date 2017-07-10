@@ -43,13 +43,19 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_commandLinkButton_clicked()
 {
+    if (ui->listWidget->currentItem())
 
-if (ui->listWidget->currentItem())
+
 {
+        QString kategori = ui->comboBox_2->currentText();
+        QString uygulama = ui->listWidget->currentItem()->text();
+           QFile kurulumu("/var/lib/pkg/DB/"+uygulama+"/kurulan");
+
+           if(!kurulumu.exists()) {
+
     sayac=10;
      ui->progressBar->setValue(sayac);
-     QString kategori = ui->comboBox_2->currentText();
-     QString uygulama = ui->listWidget->currentItem()->text();
+
      ui->progressBar->setValue(sayac);
      sayac=50;
 QProcess::execute("mps kur "+uygulama);
@@ -57,6 +63,12 @@ sayac=100;
 ui->progressBar->setValue(sayac);
 QMessageBox::information(this, "MilPeK",uygulama +" uygulaması başarıyla kuruldu.");
 ui->listWidget->reset();
+           }
+               else
+           {
+   QMessageBox::information(this, "MilPeK",uygulama +" uygulaması zaten kurulu.");
+   ui->listWidget->reset();
+           }
 
 }
 
@@ -77,8 +89,9 @@ void MainWindow::on_commandLinkButton_2_clicked()
 
 void MainWindow::on_comboBox_2_currentTextChanged(const QString &arg1)
 {
+
     QStringList yenilistem;
-     ui->listWidget->clearSelection();
+     ui->listWidget->reset();
     QString kategori = ui->comboBox_2->currentText();
     QDir yeniliste("/root/talimatname/"+kategori);
     ui->listWidget->clear();
@@ -125,9 +138,15 @@ void MainWindow::processOutput(){
 
 void MainWindow::on_commandLinkButton_3_clicked()
 {
-
     if (ui->listWidget->currentItem())
-    {
+
+
+{
+        QString kategori = ui->comboBox_2->currentText();
+        QString uygulama = ui->listWidget->currentItem()->text();
+           QFile kurulumu("/var/lib/pkg/DB/"+uygulama+"/kurulan");
+
+           if(!kurulumu.exists()) {
 
     sayac=10;
     ui->progressBar->setValue(sayac);
@@ -142,7 +161,14 @@ void MainWindow::on_commandLinkButton_3_clicked()
            ui->progressBar->setValue(sayac);
           QMessageBox::information(this, "MilPeK",uygulama +" uygulaması başarıyla derlendi ve kuruldu.");
           ui->listWidget->reset();
-        }
+           }
+               else
+           {
+   QMessageBox::information(this, "MilPeK",uygulama +" uygulaması zaten kurulu.");
+   ui->listWidget->reset();
+           }
+
+}
 
 else
         {
@@ -153,7 +179,18 @@ else
 void MainWindow::on_commandLinkButton_5_clicked()
 {
     if (ui->listWidget->currentItem())
-    {
+
+
+{
+        QString kategori = ui->comboBox_2->currentText();
+        QString uygulama = ui->listWidget->currentItem()->text();
+           QFile kurulumu("/var/lib/pkg/DB/"+uygulama+"/kurulan");
+
+           if(!kurulumu.exists()) {
+    QMessageBox::information(this, "MilPeK",uygulama +" uygulaması zaten kurulu değil.");
+           }
+               else
+           {
           sayac=10;
            ui->progressBar->setValue(sayac);
 
@@ -168,7 +205,7 @@ void MainWindow::on_commandLinkButton_5_clicked()
           QMessageBox::information(this, "MilPeK",uygulama +" uygulaması başarıyla silindi.");
           ui->listWidget->reset();
  }
-
+}
           else
           {
                  QMessageBox::information(this, "MilPeK"," Lütfen silmek istediğiniz uygulamayı seçiniz");
