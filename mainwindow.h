@@ -9,6 +9,7 @@
 
 namespace Ui {
 class MainWindow;
+class InstallThread;
 }
 
 class MainWindow : public QMainWindow
@@ -31,17 +32,22 @@ private slots:
 
     void on_commandLinkButton_5_clicked();
 
-
     void on_commandLinkButton_4_clicked();
 
     void on_lineEdit_textChanged(const QString &arg1);
 
     void on_listWidget_currentTextChanged(const QString &currentText);
 
+    void processOutput();
+
 private:
     Ui::MainWindow *ui;
     void TemaYukle();
+    void addSignalsSlots();
     QStringList listem;
+    QProcess *terminal;
+    QByteArray terminalOutput;
+    QByteArray terminalOutputErr;
 
 
 };

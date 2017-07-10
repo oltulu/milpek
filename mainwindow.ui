@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>700</width>
-    <height>600</height>
+    <height>510</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,13 +22,13 @@
   <property name="minimumSize">
    <size>
     <width>700</width>
-    <height>600</height>
+    <height>510</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>700</width>
-    <height>600</height>
+    <height>510</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -59,7 +59,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>510</y>
+      <y>420</y>
       <width>681</width>
       <height>23</height>
      </rect>
@@ -119,7 +119,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>540</y>
+      <y>450</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -132,7 +132,7 @@
     <property name="geometry">
      <rect>
       <x>590</x>
-      <y>540</y>
+      <y>450</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -202,7 +202,7 @@
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>540</y>
+      <y>450</y>
       <width>141</width>
       <height>31</height>
      </rect>
@@ -215,26 +215,13 @@
     <property name="geometry">
      <rect>
       <x>397</x>
-      <y>540</y>
+      <y>450</y>
       <width>181</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
      <string>Veritabanını Güncelle</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>419</y>
-      <width>681</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Hazır</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="textEdit">
@@ -266,7 +253,7 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Uygulama kategorisi seçtikten sonra, Mevcut uygulamalardan işlem yapmak istediğiniz programı seçerek butonlar yardımıyla işleminizi gerçekleştirebilirsiniz...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt; color:#204a87;&quot;&gt;Uygulama kategorisi seçtikten sonra, Mevcut uygulamalardan işlem yapmak istediğiniz programı seçerek butonlar yardımıyla işleminizi gerçekleştirebilirsiniz...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="textInteractionFlags">
      <set>Qt::NoTextInteraction</set>
@@ -276,7 +263,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>277</x>
-      <y>540</y>
+      <y>450</y>
       <width>111</width>
       <height>31</height>
      </rect>
