@@ -219,7 +219,7 @@ void MainWindow::on_commandLinkButton_4_clicked()
         ui->progressBar->setValue(sayac);
         sayac=50;
         QProcess::execute("mps guncelle");
-
+        QProcess::execute("ln -s /root/talimatlar /root/talimatname/yerel");
         sayac=100;
         ui->progressBar->setValue(sayac);
         QMessageBox::information(this, "MilPeK"," Uygulama veritabanı başarıyla güncellendi.");
