@@ -166,6 +166,11 @@
     </item>
     <item>
      <property name="text">
+      <string>yerel</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>onsistem</string>
      </property>
     </item>
