@@ -40,6 +40,8 @@ private slots:
 
     void processOutput();
 
+    void on_commandLinkButton_6_clicked();
+
 private:
     Ui::MainWindow *ui;
     void TemaYukle();

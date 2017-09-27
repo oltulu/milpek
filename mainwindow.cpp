@@ -83,8 +83,9 @@ else
 
 void MainWindow::on_commandLinkButton_2_clicked()
 {
-
-    QMessageBox::information(this, "MilPeK","Cihan Alkan tarafından Milis Linux için hazırlanmıştır.");
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Kurmak istediğiniz paketi seçin"),"~/",tr("milis peketi (*.mps.lz)"));
+    QProcess::execute("lxqt-sudo mps kur "+fileName);
+    QMessageBox::information(this, "MilPeK","Kurulum işlemi tamamlanmıştır.");
 }
 
 void MainWindow::on_comboBox_2_currentTextChanged(const QString &arg1)
@@ -264,3 +265,41 @@ void MainWindow::on_listWidget_currentTextChanged(const QString &currentText)
    ui->textEdit->setText(output);
 }
 
+
+void MainWindow::on_commandLinkButton_6_clicked()
+{
+    if (ui->listWidget->currentItem())
+
+
+{
+        QString kategori = ui->comboBox_2->currentText();
+        QString uygulama = ui->listWidget->currentItem()->text();
+           QFile kurulumu("/var/lib/pkg/DB/"+uygulama+"/kurulan");
+
+           if(!kurulumu.exists()) {
+    QMessageBox::information(this, "MilPeK",uygulama +" uygulaması kurulu değil.");
+           }
+               else
+           {
+          sayac=10;
+           ui->progressBar->setValue(sayac);
+
+        QString uygulama = ui->listWidget->currentItem()->text();
+          sayac=50;
+          ui->progressBar->setValue(sayac);
+
+          sayac=100;
+          ui->progressBar->setValue(sayac);
+          ui->listWidget->reset();
+          QProcess liste;
+          liste.start("sed 200q /var/lib/pkg/DB/"+uygulama+"/kurulan");
+          liste.waitForFinished();
+          QString output(liste.readAllStandardOutput());
+          ui->textEdit->setText(output);
+ }
+}
+          else
+          {
+                 QMessageBox::information(this, "MilPeK"," Lütfen silmek istediğiniz uygulamayı seçiniz");
+           }
+}
