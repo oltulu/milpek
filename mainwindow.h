@@ -42,6 +42,16 @@ private slots:
 
     void on_commandLinkButton_6_clicked();
 
+    void on_commandLinkButton_9_clicked();
+
+    void on_commandLinkButton_8_clicked();
+
+    void on_commandLinkButton_11_clicked();
+
+    void on_commandLinkButton_10_clicked();
+
+    void on_commandLinkButton_7_clicked();
+
 private:
     Ui::MainWindow *ui;
     void TemaYukle();

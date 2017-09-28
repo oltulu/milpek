@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>700</width>
-    <height>510</height>
+    <height>550</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,13 +22,13 @@
   <property name="minimumSize">
    <size>
     <width>700</width>
-    <height>510</height>
+    <height>550</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>700</width>
-    <height>510</height>
+    <height>550</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -314,6 +314,71 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="text">
      <string>Paket İçeriği</string>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="commandLinkButton_7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>490</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Gerekler</string>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="commandLinkButton_8">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>490</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kullananlar</string>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="commandLinkButton_9">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>490</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kurulu Paketler</string>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="commandLinkButton_10">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>490</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kapat</string>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="commandLinkButton_11">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>490</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Milpek Hakkında</string>
     </property>
    </widget>
   </widget>
