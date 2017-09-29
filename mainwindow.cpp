@@ -288,7 +288,7 @@ void MainWindow::on_commandLinkButton_6_clicked()
 }
           else
           {
-                 QMessageBox::information(this, "MilPeK"," Lütfen silmek istediğiniz uygulamayı seçiniz");
+                 QMessageBox::information(this, "MilPeK"," Lütfen içeriğini görmek istediğiniz uygulamayı seçiniz");
            }
 }
 
