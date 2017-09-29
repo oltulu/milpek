@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>700</width>
-    <height>550</height>
+    <height>530</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,13 +22,13 @@
   <property name="minimumSize">
    <size>
     <width>700</width>
-    <height>550</height>
+    <height>530</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>700</width>
-    <height>550</height>
+    <height>530</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -120,25 +120,12 @@
      <rect>
       <x>10</x>
       <y>450</y>
-      <width>91</width>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
      <string>Kur</string>
-    </property>
-   </widget>
-   <widget class="QCommandLinkButton" name="commandLinkButton_2">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>450</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Peket Kur</string>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox_2">
@@ -181,11 +168,6 @@
     </item>
     <item>
      <property name="text">
-      <string>temel-ek</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
       <string/>
      </property>
     </item>
@@ -206,27 +188,14 @@
    <widget class="QCommandLinkButton" name="commandLinkButton_3">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>450</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Derle &gt;&gt; Kur</string>
-    </property>
-   </widget>
-   <widget class="QCommandLinkButton" name="commandLinkButton_4">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
+      <x>90</x>
       <y>450</y>
       <width>121</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>VT Güncelle</string>
+     <string>Derle &gt;&gt; Kur</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="textEdit">
@@ -267,9 +236,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QCommandLinkButton" name="commandLinkButton_5">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>220</x>
       <y>450</y>
-      <width>61</width>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -306,9 +275,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QCommandLinkButton" name="commandLinkButton_6">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>300</x>
       <y>450</y>
-      <width>131</width>
+      <width>121</width>
       <height>31</height>
      </rect>
     </property>
@@ -319,9 +288,9 @@ p, li { white-space: pre-wrap; }
    <widget class="QCommandLinkButton" name="commandLinkButton_7">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>490</y>
-      <width>91</width>
+      <x>440</x>
+      <y>450</y>
+      <width>111</width>
       <height>31</height>
      </rect>
     </property>
@@ -332,60 +301,81 @@ p, li { white-space: pre-wrap; }
    <widget class="QCommandLinkButton" name="commandLinkButton_8">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>490</y>
+      <x>560</x>
+      <y>450</y>
       <width>131</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>Kullananlar</string>
-    </property>
-   </widget>
-   <widget class="QCommandLinkButton" name="commandLinkButton_9">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>490</y>
-      <width>151</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Kurulu Paketler</string>
-    </property>
-   </widget>
-   <widget class="QCommandLinkButton" name="commandLinkButton_10">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>490</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Kapat</string>
-    </property>
-   </widget>
-   <widget class="QCommandLinkButton" name="commandLinkButton_11">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>490</y>
-      <width>151</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Milpek Hakkında</string>
+     <string>Ters Gerekler</string>
     </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>700</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDosya">
+    <property name="title">
+     <string>Dosya</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="action_k_2"/>
+   </widget>
+   <widget class="QMenu" name="menu_lemler">
+    <property name="title">
+     <string>İşlemler</string>
+    </property>
+    <addaction name="actionVT_G_ncelle"/>
+    <addaction name="actionKurulu_Paketler"/>
+    <addaction name="actionBilgisayardan_Paket_Kur"/>
+   </widget>
+   <widget class="QMenu" name="menuHakk_nda">
+    <property name="title">
+     <string>Hakkında</string>
+    </property>
+    <addaction name="actionMilPeK_Hakk_nda"/>
+   </widget>
+   <addaction name="menuDosya"/>
+   <addaction name="menu_lemler"/>
+   <addaction name="menuHakk_nda"/>
+  </widget>
   <action name="actionBilgi">
    <property name="text">
     <string>Bilgi</string>
+   </property>
+  </action>
+  <action name="actionVT_G_ncelle">
+   <property name="text">
+    <string>VT Güncelle</string>
+   </property>
+  </action>
+  <action name="actionKurulu_Paketler">
+   <property name="text">
+    <string>Kurulu Paketler</string>
+   </property>
+  </action>
+  <action name="actionMilPeK_Hakk_nda">
+   <property name="text">
+    <string>MilPeK Hakkında</string>
+   </property>
+  </action>
+  <action name="action_k_2">
+   <property name="text">
+    <string>Çıkış</string>
+   </property>
+  </action>
+  <action name="actionBilgisayardan_Paket_Kur">
+   <property name="text">
+    <string>Bilgisayardan Paket Kur</string>
    </property>
   </action>
  </widget>

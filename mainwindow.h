@@ -52,6 +52,16 @@ private slots:
 
     void on_commandLinkButton_7_clicked();
 
+    void on_action_k_2_triggered();
+
+    void on_actionMilPeK_Hakk_nda_triggered();
+
+    void on_actionBilgisayardan_Paket_Kur_triggered();
+
+    void on_actionVT_G_ncelle_triggered();
+
+    void on_actionKurulu_Paketler_triggered();
+
 private:
     Ui::MainWindow *ui;
     void TemaYukle();
