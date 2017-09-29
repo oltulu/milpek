@@ -24,15 +24,11 @@ private slots:
 
     void on_commandLinkButton_clicked();
 
-    void on_commandLinkButton_2_clicked();
-
     void on_comboBox_2_currentTextChanged(const QString &arg1);
 
     void on_commandLinkButton_3_clicked();
 
     void on_commandLinkButton_5_clicked();
-
-    void on_commandLinkButton_4_clicked();
 
     void on_lineEdit_textChanged(const QString &arg1);
 
@@ -42,15 +38,7 @@ private slots:
 
     void on_commandLinkButton_6_clicked();
 
-    void on_commandLinkButton_9_clicked();
-
     void on_commandLinkButton_8_clicked();
-
-    void on_commandLinkButton_11_clicked();
-
-    void on_commandLinkButton_10_clicked();
-
-    void on_commandLinkButton_7_clicked();
 
     void on_action_k_2_triggered();
 
