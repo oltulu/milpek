@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AnaPencere</class>
+ <widget class="QMainWindow" name="AnaPencere">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>730</width>
+    <height>527</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>730</width>
+    <height>527</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>730</width>
+    <height>527</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MiLPek - Milis Program Ekle Kaldır 0.2</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>410</y>
+      <width>681</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::ActionsContextMenu</enum>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textDirection">
+     <enum>QProgressBar::TopToBottom</enum>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="DerleKurButon">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>440</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Derle &gt;&gt; Kur</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>0</y>
+      <width>421</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#204a87;&quot;&gt;Uygulama Arayüzü&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="Kategoriler">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>211</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="currentText">
+     <string>genel</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="minimumContentsLength">
+     <number>0</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>genel</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>yerel</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>onsistem</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>temel</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>101</y>
+      <width>221</width>
+      <height>301</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="SilButonu">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>440</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sil</string>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="kurbutonu">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>440</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kur</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="UygulamaAra">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>211</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Uygulama Ara</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="commandLinkButton_7">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>440</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Gerekler</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>20</y>
+      <width>461</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="TersGereklerButonu">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>440</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ters Gerekler</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="ciktimetni">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>280</y>
+      <width>461</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt; color:#204a87;&quot;&gt;Uygulama kategorisi seçtikten sonra, Mevcut uygulamalardan işlem yapmak istediğiniz programı seçerek butonlar yardımıyla işleminizi gerçekleştirebilirsiniz...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="textInteractionFlags">
+     <set>Qt::NoTextInteraction</set>
+    </property>
+   </widget>
+   <widget class="QCommandLinkButton" name="PaketicerigiButonu">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>440</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Paket İçeriği</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>-11</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#204a87; vertical-align:sub;&quot;&gt;Uygulama Kategorisi Seçiniz&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>211</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Mevcut Uygulamalar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>730</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDosya">
+    <property name="title">
+     <string>Dosya</string>
+    </property>
+    <addaction name="action_cikis"/>
+   </widget>
+   <widget class="QMenu" name="menu_lemler">
+    <property name="title">
+     <string>İşlemler</string>
+    </property>
+    <addaction name="actionVeritaban_G_ncelle"/>
+    <addaction name="actionKurulu_Paketler"/>
+    <addaction name="actionBilgisayardan_Program_Kur"/>
+   </widget>
+   <widget class="QMenu" name="menuHakk_nda">
+    <property name="title">
+     <string>Hakkında</string>
+    </property>
+    <addaction name="actionMiLPeK_Hakk_nda"/>
+   </widget>
+   <addaction name="menuDosya"/>
+   <addaction name="menu_lemler"/>
+   <addaction name="menuHakk_nda"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_cikis">
+   <property name="text">
+    <string>Çıkış</string>
+   </property>
+  </action>
+  <action name="actionVeritaban_G_ncelle">
+   <property name="text">
+    <string>Veritabanı Güncelle</string>
+   </property>
+  </action>
+  <action name="actionKurulu_Paketler">
+   <property name="text">
+    <string>Kurulu Paketler</string>
+   </property>
+  </action>
+  <action name="actionBilgisayardan_Program_Kur">
+   <property name="text">
+    <string>Bilgisayardan Program Kur</string>
+   </property>
+  </action>
+  <action name="actionMiLPeK_Hakk_nda">
+   <property name="text">
+    <string>MiLPeK Hakkında</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

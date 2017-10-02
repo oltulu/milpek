@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2017-05-27T16:55:04
+# Project created by QtCreator 2017-10-02T15:33:54
 #
 #-------------------------------------------------
 
@@ -12,7 +12,7 @@ TARGET = milpek
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
-# any feature of Qt which as been marked as deprecated (the exact warnings
+# any feature of Qt which has been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
@@ -25,10 +25,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        anapencere.cpp
 
 HEADERS += \
-        mainwindow.h
+        anapencere.h
 
 FORMS += \
-        mainwindow.ui
+        anapencere.ui
