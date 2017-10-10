@@ -299,7 +299,7 @@ void AnaPencere::on_listWidget_currentTextChanged(const QString &currentText)
   if(!resimvarmi.exists()) {
 
       ui->label_5->setPixmap(QPixmap("/root/arayuz/resimyok.png") );
-      ui->label_3->setPixmap(QPixmap("/root/arayuz/milpek2.png") );
+      ui->label_3->setPixmap(QPixmap("/root/arayuz/soru.png") );
   }
       else
   {
