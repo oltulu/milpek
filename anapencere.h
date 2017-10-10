@@ -46,8 +46,6 @@ private slots:
 
     void on_actionMiLPeK_Hakk_nda_triggered();
 
-    void on_label_5_linkActivated(const QString &link);
-
 private:
     Ui::AnaPencere *ui;
     void addSignalsSlots();
