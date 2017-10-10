@@ -299,10 +299,12 @@ void AnaPencere::on_listWidget_currentTextChanged(const QString &currentText)
   if(!resimvarmi.exists()) {
 
       ui->label_5->setPixmap(QPixmap("/root/arayuz/resimyok.png") );
+      ui->label_3->setPixmap(QPixmap("/root/arayuz/milpek2.png") );
   }
       else
   {
      ui->label_5->setPixmap(QPixmap("/root/arayuz/"+uygulama+".png") );
+     ui->label_3->setPixmap(QPixmap("/root/arayuz/simgeler/"+uygulama+"_"+uygulama+".png") );
   }
    QProcess bilgi;
    bilgi.start("sed 7q /root/talimatname/"+kategori+"/"+uygulama+"/talimat");
