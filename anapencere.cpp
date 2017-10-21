@@ -275,23 +275,23 @@ ui->listWidget->addItems(yenilistem);
 }
 
 void AnaPencere::on_UygulamaAra_textChanged(const QString &arg1)
-    {
-        if (ui->Kategoriler->currentText() == "yerel")
+{
+    if (ui->Kategoriler->currentText() == "yerel")
 
+{
+        ui->listWidget->reset();
+        QStringList yenilistem1;
+       QRegExp regExp(arg1, Qt::CaseInsensitive, QRegExp::Wildcard);
+        QDir yeniliste1("/root/talimatlar/");
+        ui->listWidget->clear();
+        yeniliste1.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
+        yenilistem1 = yeniliste1.entryList();
+    ui->listWidget->addItems(yenilistem1.filter(regExp));
+    }
+ else
     {
+
     ui->listWidget->reset();
-    QStringList yenilistem1;
-   QRegExp regExp(arg1, Qt::CaseInsensitive, QRegExp::Wildcard);
-    QString kategori = ui->Kategoriler->currentText();
-    QDir yeniliste1("/root/talimatlar);
-    ui->listWidget->clear();
-    yeniliste1.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
-    yenilistem1 = yeniliste1.entryList();
-ui->listWidget->addItems(yenilistem1.filter(regExp));
-        }
-     else
-        {
-             ui->listWidget->reset();
     QStringList yenilistem1;
    QRegExp regExp(arg1, Qt::CaseInsensitive, QRegExp::Wildcard);
     QString kategori = ui->Kategoriler->currentText();
@@ -301,7 +301,7 @@ ui->listWidget->addItems(yenilistem1.filter(regExp));
     yenilistem1 = yeniliste1.entryList();
 ui->listWidget->addItems(yenilistem1.filter(regExp));
 }
-}
+    }
 
 void AnaPencere::on_listWidget_currentTextChanged(const QString &currentText)
 {
@@ -315,7 +315,7 @@ void AnaPencere::on_listWidget_currentTextChanged(const QString &currentText)
   if(!resimvarmi.exists()) {
 
       ui->label_5->setPixmap(QPixmap("/root/arayuz/resimyok.png") );
-      ui->label_3->setPixmap(QPixmap("/root/arayuz/simgeler/"+uygulama+"_"+uygulama+".png") );
+      ui->label_3->setPixmap(QPixmap("/root/arayuz/milpek2.png") );
   }
       else
   {
