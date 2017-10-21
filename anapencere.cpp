@@ -322,13 +322,26 @@ void AnaPencere::on_listWidget_currentTextChanged(const QString &currentText)
      ui->label_5->setPixmap(QPixmap("/root/arayuz/"+uygulama+".png") );
      ui->label_3->setPixmap(QPixmap("/root/arayuz/simgeler/"+uygulama+"_"+uygulama+".png") );
   }
+  {
+      if (ui->Kategoriler->currentText() == "yerel")
+
+  {
    QProcess bilgi;
-   bilgi.start("sed 7q /root/talimatname/"+kategori+"/"+uygulama+"/talimat");
+   bilgi.start("sed 7q /root/talimatlar/"+uygulama+"/talimat");
    bilgi.waitForFinished();
    QString output(bilgi.readAllStandardOutput());
 ui->ciktimetni->setText(output);
+      }
+   else
+      {
+          QProcess bilgi;
+          bilgi.start("sed 7q /root/talimatname/"+kategori+"/"+uygulama+"/talimat");
+          bilgi.waitForFinished();
+          QString output(bilgi.readAllStandardOutput());
+       ui->ciktimetni->setText(output);
+      }
 }
-
+}
 void AnaPencere::on_action_cikis_triggered()
 {
      close();
