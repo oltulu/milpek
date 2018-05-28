@@ -335,7 +335,7 @@ ui->ciktimetni->setText(output);
    else
       {
           QProcess bilgi;
-          bilgi.start("sed 7q /root/talimatname/"+kategori+"/"+uygulama+"/talimat");
+          bilgi.start("sed 7q /root/talimatname/"+kategori+"/$(echo" +uygulama+" | cut -c1)/"+uygulama+"/talimat");
           bilgi.waitForFinished();
           QString output(bilgi.readAllStandardOutput());
        ui->ciktimetni->setText(output);
