@@ -394,7 +394,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionSe_ili_Paketi_Gerekleyiyle_Kald_r">
    <property name="text">
-    <string>Seçili Paketi Gerekleyiyle Kaldır</string>
+    <string>Seçili Paketi Gerekleriyle Kaldır</string>
    </property>
   </action>
   <action name="actionSe_ili_Paketin_Eksi_ini_Bul">
