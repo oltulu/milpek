@@ -46,6 +46,24 @@ private slots:
 
     void on_actionMiLPeK_Hakk_nda_triggered();
 
+    void on_actionSe_ili_Paketi_ndir_triggered();
+
+    void on_actionSe_ili_Paketi_ndir_Kur_triggered();
+
+    void on_actionSe_ili_Paketi_Yeniden_Kur_triggered();
+
+    void on_actionSe_ili_Paketi_Gerekleyiyle_Kald_r_triggered();
+
+    void on_actionSe_ili_Paketin_Eksi_ini_Bul_triggered();
+
+    void on_actionSe_ili_Paketin_K_rd_Paketler_triggered();
+
+    void on_actionSistem_K_r_k_Kontrol_triggered();
+
+    void on_actionPaket_Gruplar_triggered();
+
+    void on_actionTopluluk_Talimatlar_n_ndir_triggered();
+
 private:
     Ui::AnaPencere *ui;
     void addSignalsSlots();
