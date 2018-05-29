@@ -64,6 +64,8 @@ private slots:
 
     void on_actionTopluluk_Talimatlar_n_ndir_triggered();
 
+    void on_commandLinkButton_7_clicked();
+
 private:
     Ui::AnaPencere *ui;
     void addSignalsSlots();

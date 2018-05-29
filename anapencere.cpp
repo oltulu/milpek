@@ -356,34 +356,13 @@ void AnaPencere::on_listWidget_currentTextChanged(const QString &currentText)
      ui->label_5->setPixmap(QPixmap("/root/arayuz/"+uygulama+".png") );
      ui->label_3->setPixmap(QPixmap("/root/arayuz/simgeler/"+uygulama+"_"+uygulama+".png") );
   }
-  {
-      if (ui->Kategoriler->currentText() == "yerel")
 
-  {
    QProcess bilgi;
-   bilgi.start("sed 8q /root/talimatlar/"+uygulama+"/talimat");
+   bilgi.start("mps tbilgi "+uygulama);
    bilgi.waitForFinished();
    QString output(bilgi.readAllStandardOutput());
 ui->ciktimetni->setText(output);
-      }
-     else if (ui->Kategoriler->currentText() == "genel")
 
-  {
-   QProcess bilgi;
-   bilgi.start("sed 8q /root/talimatname/genel/${"+uygulama+":0:1}/"+uygulama+"/talimat");
-   bilgi.waitForFinished();
-   QString output(bilgi.readAllStandardOutput());
-ui->ciktimetni->setText(output);
-      }
-   else
-      {
-          QProcess bilgi;
-          bilgi.start("sed 8q /root/talimatname/"+kategori+"/"+uygulama+"/talimat");
-          bilgi.waitForFinished();
-          QString output(bilgi.readAllStandardOutput());
-       ui->ciktimetni->setText(output);
-      }
-}
 }
 void AnaPencere::on_action_cikis_triggered()
 {
@@ -645,4 +624,21 @@ void AnaPencere::on_actionTopluluk_Talimatlar_n_ndir_triggered()
     liste.waitForFinished();
     QString output(liste.readAllStandardOutput());
     ui->ciktimetni->setText(output);
+}
+
+void AnaPencere::on_commandLinkButton_7_clicked()
+{
+        if (ui->listWidget->currentItem())
+    {
+    QString uygulama = ui->listWidget->currentItem()->text();
+    QProcess liste;
+    liste.start("mps -bb "+uygulama);
+    liste.waitForFinished();
+    QString output(liste.readAllStandardOutput());
+    ui->ciktimetni->setText(output);
+        }
+    else
+    {
+           QMessageBox::information(this, "MilPeK"," Lütfen gereklerini görmek istediğiniz uygulamayı seçiniz");
+     }
 }
