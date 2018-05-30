@@ -20,17 +20,21 @@ void AnaPencere::addSignalsSlots(){
     connect(terminal, SIGNAL(readyReadStandardError() ), this, SLOT( processOutput() ) );
 }
     int sayac=0;
-    void AnaPencere::processOutput(){
+void AnaPencere::processOutput(){
     terminalOutput = terminal->readAllStandardOutput();
     terminalOutputErr = terminal->readAllStandardError();
+
     // To Show info about installing
     QString preparedText = terminalOutput.left(70);
     preparedText.replace("\n","");
     ui->ciktimetni->setText(preparedText);
     //qDebug() << terminalOutput;
     //qDebug() << terminalOutputErr;
+
     const QString terminalOutputConst = terminalOutput;
+
 }
+
 AnaPencere::AnaPencere(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AnaPencere)
@@ -43,6 +47,7 @@ AnaPencere::AnaPencere(QWidget *parent) :
     listem = kaynak.entryList();
     ui->listWidget->addItems(listem);
 }
+
 AnaPencere::~AnaPencere()
 {
     delete ui;
@@ -50,13 +55,17 @@ AnaPencere::~AnaPencere()
 void AnaPencere::on_kurbutonu_clicked()
 {
     if (ui->listWidget->currentItem())
+
 {
-     QString kategori = ui->Kategoriler->currentText();
-     QString uygulama = ui->listWidget->currentItem()->text();
-     QFile kurulumu("/var/lib/pkg/DB/"+uygulama+"/kurulan");
-     if(!kurulumu.exists()) {
-     sayac=10;
+        QString kategori = ui->Kategoriler->currentText();
+        QString uygulama = ui->listWidget->currentItem()->text();
+           QFile kurulumu("/var/lib/pkg/DB/"+uygulama+"/kurulan");
+
+           if(!kurulumu.exists()) {
+
+    sayac=10;
      ui->progressBar->setValue(sayac);
+
      ui->progressBar->setValue(sayac);
      sayac=50;
 
@@ -67,7 +76,9 @@ QString output(liste.readAllStandardOutput());
 ui->ciktimetni->setText(output);
 sayac=100;
 ui->progressBar->setValue(sayac);
+
 QMessageBox::information(this, "MilPeK",uygulama +" uygulaması başarıyla kuruldu.");
+
 ui->listWidget->reset();
            }
                else
@@ -77,21 +88,26 @@ ui->listWidget->reset();
    preparedText.replace("\n","");
    ui->ciktimetni->setText(preparedText);
    ui->listWidget->reset();
-   }
+           }
+
    }
 else
    {
    QMessageBox::information(this, "MilPeK"," Lütfen kurmak için bir uygulama seçiniz");
    }
 }
+
 void AnaPencere::on_SilButonu_clicked()
 {
         if (ui->listWidget->currentItem())
+
+
     {
-        QString kategori = ui->Kategoriler->currentText();
-        QString uygulama = ui->listWidget->currentItem()->text();
-        QFile kurulumu("/var/lib/pkg/DB/"+uygulama+"/kurulan");
-        if(!kurulumu.exists()) {
+            QString kategori = ui->Kategoriler->currentText();
+            QString uygulama = ui->listWidget->currentItem()->text();
+               QFile kurulumu("/var/lib/pkg/DB/"+uygulama+"/kurulan");
+
+               if(!kurulumu.exists()) {
         QMessageBox::information(this, "MilPeK",uygulama +" uygulaması zaten kurulu değil.");
                }
                    else
@@ -102,6 +118,7 @@ void AnaPencere::on_SilButonu_clicked()
             QString uygulama = ui->listWidget->currentItem()->text();
               sayac=50;
               ui->progressBar->setValue(sayac);
+
               QProcess liste;
               liste.start("mps -sz "+uygulama+" --normal");
               liste.waitForFinished();
@@ -112,20 +129,24 @@ void AnaPencere::on_SilButonu_clicked()
               QMessageBox::information(this, "MilPeK",uygulama +" uygulaması başarıyla silindi.");
               ui->listWidget->reset();
      }
-     }
+    }
               else
               {
-              QMessageBox::information(this, "MilPeK"," Lütfen silmek istediğiniz uygulamayı seçiniz");
-              }
+                     QMessageBox::information(this, "MilPeK"," Lütfen silmek istediğiniz uygulamayı seçiniz");
+               }
 }
+
 void AnaPencere::on_DerleKurButon_clicked()
 {
     if (ui->listWidget->currentItem())
+
 {
         QString kategori = ui->Kategoriler->currentText();
         QString uygulama = ui->listWidget->currentItem()->text();
-        QFile kurulumu("/var/lib/pkg/DB/"+uygulama+"/kurulan");
-        if(!kurulumu.exists()) {
+           QFile kurulumu("/var/lib/pkg/DB/"+uygulama+"/kurulan");
+
+           if(!kurulumu.exists()) {
+
     sayac=10;
     ui->progressBar->setValue(sayac);
          sayac=20;
@@ -148,19 +169,23 @@ void AnaPencere::on_DerleKurButon_clicked()
    QMessageBox::information(this, "MilPeK",uygulama +" uygulaması zaten kurulu.");
    ui->listWidget->reset();
            }
-        }
-      else
+}
+
+else
         {
        QMessageBox::information(this, "MilPeK"," Lütfen derleyip kurmak istediğiniz uygulamayı seçiniz");
 }
 }
+
 void AnaPencere::on_PaketicerigiButonu_clicked()
 {
     if (ui->listWidget->currentItem())
+
 {
         QString kategori = ui->Kategoriler->currentText();
         QString uygulama = ui->listWidget->currentItem()->text();
            QFile kurulumu("/var/lib/pkg/DB/"+uygulama+"/kurulan");
+
            if(!kurulumu.exists()) {
     QMessageBox::information(this, "MilPeK",uygulama +" uygulaması kurulu değil.");
            }
@@ -172,6 +197,7 @@ void AnaPencere::on_PaketicerigiButonu_clicked()
         QString uygulama = ui->listWidget->currentItem()->text();
           sayac=50;
           ui->progressBar->setValue(sayac);
+
           sayac=100;
           ui->progressBar->setValue(sayac);
           ui->listWidget->reset();
@@ -181,12 +207,13 @@ void AnaPencere::on_PaketicerigiButonu_clicked()
           QString output(liste.readAllStandardOutput());
           ui->ciktimetni->setText(output);
  }
- }
+}
           else
     {
           QMessageBox::information(this, "MilPeK"," Lütfen içeriğini görmek istediğiniz uygulamayı seçiniz");
    }
 }
+
 void AnaPencere::on_TersGereklerButonu_clicked()
 {
     if (ui->listWidget->currentItem())
@@ -198,8 +225,9 @@ void AnaPencere::on_TersGereklerButonu_clicked()
 
            if(!kurulumu.exists()) {
 
-    sayac=30;
+    sayac=10;
      ui->progressBar->setValue(sayac);
+
      ui->progressBar->setValue(sayac);
      sayac=50;
      QProcess liste;
@@ -277,9 +305,11 @@ void AnaPencere::on_Kategoriler_currentTextChanged(const QString &arg1)
 	ui->listWidget->addItems(stdout.split('\n'));
 }
 }
+
 void AnaPencere::on_UygulamaAra_textChanged(const QString &arg1)
 {
     if (ui->Kategoriler->currentText() == "yerel")
+
 {
         ui->listWidget->reset();
         QStringList yenilistem1;
@@ -291,7 +321,8 @@ void AnaPencere::on_UygulamaAra_textChanged(const QString &arg1)
     ui->listWidget->addItems(yenilistem1.filter(regExp));
     }
    else if (ui->Kategoriler->currentText() == "genel")
-   {
+
+{
         ui->listWidget->reset();
         QStringList yenilistem1;
        QRegExp regExp(arg1, Qt::CaseInsensitive, QRegExp::Wildcard);
@@ -303,6 +334,7 @@ void AnaPencere::on_UygulamaAra_textChanged(const QString &arg1)
     }
  else
     {
+
     ui->listWidget->reset();
     QStringList yenilistem1;
    QRegExp regExp(arg1, Qt::CaseInsensitive, QRegExp::Wildcard);
@@ -312,13 +344,16 @@ void AnaPencere::on_UygulamaAra_textChanged(const QString &arg1)
     yeniliste1.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
     yenilistem1 = yeniliste1.entryList();
 ui->listWidget->addItems(yenilistem1.filter(regExp));
-    }
+}
     }
 
 void AnaPencere::on_listWidget_currentTextChanged(const QString &currentText)
 {
-  QString kategori = ui->Kategoriler->currentText();
-  QString uygulama = ui->listWidget->currentItem()->text();
+    QString kategori = ui->Kategoriler->currentText();
+ QString uygulama = ui->listWidget->currentItem()->text();
+
+
+
   QFile resimvarmi("/root/arayuz/"+uygulama+".png");
 
   if(!resimvarmi.exists()) {
@@ -337,16 +372,19 @@ void AnaPencere::on_listWidget_currentTextChanged(const QString &currentText)
    bilgi.waitForFinished();
    QString output(bilgi.readAllStandardOutput());
 ui->ciktimetni->setText(output);
+
 }
 void AnaPencere::on_action_cikis_triggered()
 {
      close();
 }
+
 void AnaPencere::on_actionVeritaban_G_ncelle_triggered()
 {
     ui->progressBar->setValue(sayac);
     sayac=50;
     QProcess::execute("mps -G");
+
     QProcess liste;
     liste.start("mps -GG --normal");
     liste.waitForFinished();
@@ -357,6 +395,7 @@ void AnaPencere::on_actionVeritaban_G_ncelle_triggered()
     QProcess::execute("/usr/share/milpek/dizinyap");
 QMessageBox::information(this, "MilPeK","Veritabanı güncelleme işlemi tamamlanmıştır.");
 }
+
 void AnaPencere::on_actionKurulu_Paketler_triggered()
 {
     sayac=10;
@@ -370,6 +409,7 @@ void AnaPencere::on_actionKurulu_Paketler_triggered()
     QString output(liste.readAllStandardOutput());
     ui->ciktimetni->setText(output);
 }
+
 void AnaPencere::on_actionBilgisayardan_Program_Kur_triggered()
 {
     QString fileName = QFileDialog::getOpenFileName(this, tr("Kurmak istediğiniz paketi seçin"),"~/",tr("milis (*.mps.lz)"));
@@ -380,13 +420,16 @@ void AnaPencere::on_actionBilgisayardan_Program_Kur_triggered()
     ui->ciktimetni->setText(preparedText);
     QMessageBox::information(this, "MilPeK","Bilgisayardan program kurma işlemi tamamlanmıştır.");
 }
+
 void AnaPencere::on_actionMiLPeK_Hakk_nda_triggered()
 {
    QMessageBox::information(this, "MilPeK"," Milis Linux için Cihan Alkan tarafından hazırlanmıştır.");
 }
+
 void AnaPencere::on_actionSe_ili_Paketi_ndir_triggered()
 {
     if (ui->listWidget->currentItem())
+
 {
         QString kategori = ui->Kategoriler->currentText();
         QString uygulama = ui->listWidget->currentItem()->text();
@@ -400,7 +443,9 @@ void AnaPencere::on_actionSe_ili_Paketi_ndir_triggered()
         QString uygulama = ui->listWidget->currentItem()->text();
            ui->progressBar->setValue(sayac);
             sayac=50;
+
            QProcess::execute("mps -i "+uygulama);
+
           sayac=100;
            ui->progressBar->setValue(sayac);
           QMessageBox::information(this, "MilPeK",uygulama +" uygulaması başarıyla indirildi ama kurulmadı");
@@ -412,14 +457,18 @@ void AnaPencere::on_actionSe_ili_Paketi_ndir_triggered()
    ui->listWidget->reset();
            }
 }
+
 else
         {
        QMessageBox::information(this, "MilPeK"," Lütfen indirmek istediğiniz uygulamayı seçiniz");
 }
 }
+
+
 void AnaPencere::on_actionSe_ili_Paketi_ndir_Kur_triggered()
 {
     if (ui->listWidget->currentItem())
+
 {
         QString kategori = ui->Kategoriler->currentText();
         QString uygulama = ui->listWidget->currentItem()->text();
@@ -433,7 +482,9 @@ void AnaPencere::on_actionSe_ili_Paketi_ndir_Kur_triggered()
         QString uygulama = ui->listWidget->currentItem()->text();
            ui->progressBar->setValue(sayac);
             sayac=50;
+
            QProcess::execute("mps -ik "+uygulama);
+
           sayac=100;
            ui->progressBar->setValue(sayac);
           QMessageBox::information(this, "MilPeK",uygulama +" uygulaması başarıyla indirildi ve kuruldu");
@@ -445,14 +496,18 @@ void AnaPencere::on_actionSe_ili_Paketi_ndir_Kur_triggered()
    ui->listWidget->reset();
            }
 }
+
 else
         {
        QMessageBox::information(this, "MilPeK"," Lütfen indirip kurmak istediğiniz uygulamayı seçiniz");
 }
 }
+
 void AnaPencere::on_actionSe_ili_Paketi_Yeniden_Kur_triggered()
 {
         if (ui->listWidget->currentItem())
+
+
     {
             QString kategori = ui->Kategoriler->currentText();
             QString uygulama = ui->listWidget->currentItem()->text();
@@ -485,8 +540,10 @@ void AnaPencere::on_actionSe_ili_Paketi_Yeniden_Kur_triggered()
 }
 
 void AnaPencere::on_actionSe_ili_Paketi_Gerekleyiyle_Kald_r_triggered()
-     {
+{
         if (ui->listWidget->currentItem())
+
+
     {
             QString kategori = ui->Kategoriler->currentText();
             QString uygulama = ui->listWidget->currentItem()->text();
@@ -517,6 +574,7 @@ void AnaPencere::on_actionSe_ili_Paketi_Gerekleyiyle_Kald_r_triggered()
                      QMessageBox::information(this, "MilPeK"," Lütfen gerekleriyle birlikte kaldırmak istediğiniz uygulamayı seçiniz");
                }
 }
+
 void AnaPencere::on_actionSe_ili_Paketin_Eksi_ini_Bul_triggered()
 {
         if (ui->listWidget->currentItem())

@@ -1,0 +1,4 @@
+*.o
+milpek
+.qmake.stash
+make
