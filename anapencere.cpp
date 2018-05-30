@@ -42,7 +42,7 @@ AnaPencere::AnaPencere(QWidget *parent) :
     ui->setupUi(this);
     ui->label_5->setPixmap(QPixmap("/root/arayuz/milpek.png") );
     QString kategori = ui->Kategoriler->currentText();
-    QDir kaynak("/usr/share/milpek/paketler");
+    QDir kaynak("/usr/share/milpek/paketletr");
     kaynak.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
     listem = kaynak.entryList();
     ui->listWidget->addItems(listem);
@@ -274,14 +274,18 @@ void AnaPencere::on_Kategoriler_currentTextChanged(const QString &arg1)
         }
         else if (ui->Kategoriler->currentText() == "genel")
       {
-            QStringList yenilistem;
-             ui->listWidget->reset();
+            ui->listWidget->reset();
             QString kategori = ui->Kategoriler->currentText();
-            QDir yeniliste("/usr/share/milpek/paketler");
+            QProcess process;
+			process.start("mps paketler --json");
+			process.waitForFinished(-1); // will wait forever until finished
+			//QString stdout = process.readAllStandardOutput();
+			QFile f("/tmp/mps_paketler_listesi");
+			if (!f.open(QIODevice::ReadWrite | QIODevice::Text))
+			return;
+            
             ui->listWidget->clear();
-            yeniliste.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
-            yenilistem = yeniliste.entryList();
-        ui->listWidget->addItems(yenilistem);
+			ui->listWidget->addItems(QString(f.readAll()).split(','));
         }
      else
         {
@@ -289,10 +293,16 @@ void AnaPencere::on_Kategoriler_currentTextChanged(const QString &arg1)
      ui->listWidget->reset();
     QString kategori = ui->Kategoriler->currentText();
     QDir yeniliste("/root/talimatname/"+kategori);
+   
+    QProcess process;
+    process.start("mps paketler");
+	process.waitForFinished(-1); // will wait forever until finished
+	QString stdout = process.readAllStandardOutput();
+    
     ui->listWidget->clear();
     yeniliste.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
     yenilistem = yeniliste.entryList();
-ui->listWidget->addItems(yenilistem);
+	ui->listWidget->addItems(stdout.split('\n'));
 }
 }
 
@@ -358,7 +368,7 @@ void AnaPencere::on_listWidget_currentTextChanged(const QString &currentText)
   }
 
    QProcess bilgi;
-   bilgi.start("mps tbilgi "+uygulama);
+   bilgi.start("mps tbilgi "+uygulama+" --normal");
    bilgi.waitForFinished();
    QString output(bilgi.readAllStandardOutput());
 ui->ciktimetni->setText(output);
