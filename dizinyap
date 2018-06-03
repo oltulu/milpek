@@ -1,7 +1,0 @@
-    mkdir -p /usr/share/milpek/paketler
-    cd /usr/share/milpek/paketler
-    find /root/talimatname/genel/ -maxdepth 3 -type d | xargs -I {} basename {} | xargs -L 1 mkdir
-	for i in 0 3 8 9 a b c d e f g h i j k l m n o p r s t u q v y x z w
-	do
-	rmdir "/usr/share/milpek/paketler/${i}"
-    done
