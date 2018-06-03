@@ -221,7 +221,6 @@ void AnaPencere::on_TersGereklerButonu_clicked()
     if (ui->listWidget->currentItem())
 
 {
-        QString kategori = ui->Kategoriler->currentText();
         QString uygulama = ui->listWidget->currentItem()->text();
            QFile kurulumu("/var/lib/pkg/DB/"+uygulama+"/kurulan");
 
@@ -266,17 +265,23 @@ void AnaPencere::on_Kategoriler_currentTextChanged(const QString &arg1)
 
     {
             ui->listWidget->reset();
-            QString kategori = ui->Kategoriler->currentText();
             QProcess process;
             process.start("mps paketler");
             process.waitForFinished(-1); // will wait forever until finished
-            //QString stdout = process.readAllStandardOutput();
-            QFile f("/tmp/kategori");
-            if (!f.open(QIODevice::ReadWrite | QIODevice::Text))
-            return;
-
             ui->listWidget->clear();
-            ui->listWidget->addItems(QString(process.readAll()).split(' '));
+            ui->listWidget->addItems(QString(process.readAll()).split('\n'));
+        }
+
+        else if (ui->Kategoriler->currentText() == "Yerel")
+
+    {
+            ui->listWidget->reset();
+            QStringList yenilistem1;
+            QDir yeniliste1("/root/talimatlar/");
+            ui->listWidget->clear();
+            yeniliste1.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
+            yenilistem1 = yeniliste1.entryList();
+        ui->listWidget->addItems(yenilistem1);
         }
         else
       {
