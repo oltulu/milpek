@@ -66,6 +66,8 @@ private slots:
 
     void on_commandLinkButton_7_clicked();
 
+    void on_actionToplam_Paket_Say_s_triggered();
+
 private:
     Ui::AnaPencere *ui;
     void addSignalsSlots();

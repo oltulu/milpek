@@ -99,6 +99,11 @@
     </item>
     <item>
      <property name="text">
+      <string>Yerel</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>ağ</string>
      </property>
     </item>
@@ -344,7 +349,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#204a87; vertical-align:sub;&quot;&gt;Uygulama Grubu Seçiniz&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; color:#204a87; vertical-align:sub;&quot;&gt;Gruplar&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -394,6 +399,7 @@ p, li { white-space: pre-wrap; }
      <string>Paket İşlemleri</string>
     </property>
     <addaction name="actionVeritaban_G_ncelle"/>
+    <addaction name="actionToplam_Paket_Say_s"/>
     <addaction name="actionKurulu_Paketler"/>
     <addaction name="actionBilgisayardan_Program_Kur"/>
     <addaction name="actionSe_ili_Paketi_ndir"/>
@@ -485,6 +491,11 @@ p, li { white-space: pre-wrap; }
   <action name="actionTopluluk_Talimatlar_n_ndir">
    <property name="text">
     <string>Topluluk Talimatlarını İndir</string>
+   </property>
+  </action>
+  <action name="actionToplam_Paket_Say_s">
+   <property name="text">
+    <string>Toplam Paket Sayısı</string>
    </property>
   </action>
  </widget>

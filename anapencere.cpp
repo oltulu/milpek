@@ -59,7 +59,6 @@ void AnaPencere::on_kurbutonu_clicked()
     if (ui->listWidget->currentItem())
 
 {
-        QString kategori = ui->Kategoriler->currentText();
         QString uygulama = ui->listWidget->currentItem()->text();
            QFile kurulumu("/var/lib/pkg/DB/"+uygulama+"/kurulan");
 
@@ -298,7 +297,7 @@ void AnaPencere::on_Kategoriler_currentTextChanged(const QString &arg1)
 
 void AnaPencere::on_UygulamaAra_textChanged(const QString &arg1)
 {
-    if (ui->Kategoriler->currentText() == "yerel")
+    if (ui->Kategoriler->currentText() == "Yerel")
 
 {
         ui->listWidget->reset();
@@ -310,34 +309,25 @@ void AnaPencere::on_UygulamaAra_textChanged(const QString &arg1)
         yenilistem1 = yeniliste1.entryList();
     ui->listWidget->addItems(yenilistem1.filter(regExp));
     }
-   else if (ui->Kategoriler->currentText() == "genel")
-
-{
-        ui->listWidget->reset();
-        QStringList yenilistem1;
-       QRegExp regExp(arg1, Qt::CaseInsensitive, QRegExp::Wildcard);
-        QDir yeniliste1("/usr/share/milpek/paketler/");
-        ui->listWidget->clear();
-        yeniliste1.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
-        yenilistem1 = yeniliste1.entryList();
-    ui->listWidget->addItems(yenilistem1.filter(regExp));
-    }
  else
     {
-        ui->listWidget->reset();
-        QString kategori = ui->Kategoriler->currentText();
-        QProcess process;
-        process.start("mps paketler "+kategori);
-        process.waitForFinished(-1); // will wait forever until finished
-        ui->listWidget->clear();
-        ui->listWidget->addItems(QString(process.readAll()).split(' '));
 
-    ui->listWidget->clear();
-//    process.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
- //   process = process.entryList();
-//ui->listWidget->addItems(process.filter(regExp));
+        QString paketara = ui->UygulamaAra->text();
+        int listWidgetSize = ui->listWidget->count();
+
+        for (int k1 = 0; k1 < listWidgetSize; k1++)
+            {
+            if (ui->listWidget->item(k1)->text().startsWith(paketara))
+            {
+                 ui->listWidget->item(k1)->setHidden(false);
+            }
+            else
+            {
+                 ui->listWidget->item(k1)->setHidden(true);
+            }
+            }
+            }
 }
-    }
 
 void AnaPencere::on_listWidget_currentTextChanged(const QString &currentText)
 {
@@ -643,4 +633,14 @@ void AnaPencere::on_commandLinkButton_7_clicked()
     {
            QMessageBox::information(this, "MilPeK"," Lütfen gereklerini görmek istediğiniz uygulamayı seçiniz");
      }
+}
+
+void AnaPencere::on_actionToplam_Paket_Say_s_triggered()
+{
+    QProcess process;
+    process.start("mps paketler");
+    process.waitForFinished(-1); // will wait forever until finished
+    ui->listWidget->clear();
+    ui->listWidget->addItems(QString(process.readAll()).split('\n'));
+    ui->ciktimetni->setText("Resmi Depodaki Paket Sayısı: "+QString("%1").arg(ui->listWidget->count()));
 }
