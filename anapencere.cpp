@@ -41,11 +41,13 @@ AnaPencere::AnaPencere(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->label_5->setPixmap(QPixmap("/root/arayuz/milpek.png") );
+    ui->listWidget->reset();
     QString kategori = ui->Kategoriler->currentText();
-    QDir kaynak("/usr/share/milpek/paketletr");
-    kaynak.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
-    listem = kaynak.entryList();
-    ui->listWidget->addItems(listem);
+    QProcess process;
+    process.start("mps paketler");
+    process.waitForFinished(-1); // will wait forever until finished
+    ui->listWidget->clear();
+    ui->listWidget->addItems(QString(process.readAll()).split('\n'));
 }
 
 AnaPencere::~AnaPencere()
@@ -260,50 +262,33 @@ else
 
 void AnaPencere::on_Kategoriler_currentTextChanged(const QString &arg1)
     {
-        if (ui->Kategoriler->currentText() == "yerel")
+        if (ui->Kategoriler->currentText() == "Tümü")
 
     {
-            QStringList yenilistem;
-             ui->listWidget->reset();
+            ui->listWidget->reset();
             QString kategori = ui->Kategoriler->currentText();
-            QDir yeniliste("/root/talimatlar");
+            QProcess process;
+            process.start("mps paketler");
+            process.waitForFinished(-1); // will wait forever until finished
+            //QString stdout = process.readAllStandardOutput();
+            QFile f("/tmp/kategori");
+            if (!f.open(QIODevice::ReadWrite | QIODevice::Text))
+            return;
+
             ui->listWidget->clear();
-            yeniliste.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
-            yenilistem = yeniliste.entryList();
-        ui->listWidget->addItems(yenilistem);
+            ui->listWidget->addItems(QString(process.readAll()).split(' '));
         }
-        else if (ui->Kategoriler->currentText() == "genel")
+        else
       {
             ui->listWidget->reset();
             QString kategori = ui->Kategoriler->currentText();
             QProcess process;
-			process.start("mps paketler --json");
-			process.waitForFinished(-1); // will wait forever until finished
-			//QString stdout = process.readAllStandardOutput();
-			QFile f("/tmp/mps_paketler_listesi");
-			if (!f.open(QIODevice::ReadWrite | QIODevice::Text))
-			return;
-            
+            process.start("mps paketler "+kategori);
+            process.waitForFinished(-1); // will wait forever until finished
             ui->listWidget->clear();
-			ui->listWidget->addItems(QString(f.readAll()).split(','));
+            ui->listWidget->addItems(QString(process.readAll()).split(' '));
         }
-     else
-        {
-    QStringList yenilistem;
-     ui->listWidget->reset();
-    QString kategori = ui->Kategoriler->currentText();
-    QDir yeniliste("/root/talimatname/"+kategori);
-   
-    QProcess process;
-    process.start("mps paketler");
-	process.waitForFinished(-1); // will wait forever until finished
-	QString stdout = process.readAllStandardOutput();
-    
-    ui->listWidget->clear();
-    yeniliste.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
-    yenilistem = yeniliste.entryList();
-	ui->listWidget->addItems(stdout.split('\n'));
-}
+
 }
 
 void AnaPencere::on_UygulamaAra_textChanged(const QString &arg1)
@@ -334,16 +319,18 @@ void AnaPencere::on_UygulamaAra_textChanged(const QString &arg1)
     }
  else
     {
+        ui->listWidget->reset();
+        QString kategori = ui->Kategoriler->currentText();
+        QProcess process;
+        process.start("mps paketler "+kategori);
+        process.waitForFinished(-1); // will wait forever until finished
+        ui->listWidget->clear();
+        ui->listWidget->addItems(QString(process.readAll()).split(' '));
 
-    ui->listWidget->reset();
-    QStringList yenilistem1;
-   QRegExp regExp(arg1, Qt::CaseInsensitive, QRegExp::Wildcard);
-    QString kategori = ui->Kategoriler->currentText();
-    QDir yeniliste1("/root/talimatname/"+kategori);
     ui->listWidget->clear();
-    yeniliste1.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
-    yenilistem1 = yeniliste1.entryList();
-ui->listWidget->addItems(yenilistem1.filter(regExp));
+//    process.setFilter(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
+ //   process = process.entryList();
+//ui->listWidget->addItems(process.filter(regExp));
 }
     }
 

@@ -84,7 +84,7 @@
      </rect>
     </property>
     <property name="currentText">
-     <string>genel</string>
+     <string>Tümü</string>
     </property>
     <property name="currentIndex">
      <number>0</number>
@@ -94,22 +94,87 @@
     </property>
     <item>
      <property name="text">
-      <string>genel</string>
+      <string>Tümü</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>yerel</string>
+      <string>ağ</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>onsistem</string>
+      <string>bilim</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>temel</string>
+      <string>cinnamon</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>geliştirme</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>gnome</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>grafik</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>oyun</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>kde</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>kütüphane</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>lxde</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>lxqt</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>mate</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>medya</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>sistem</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>sürücü</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>xfce</string>
      </property>
     </item>
     <item>
@@ -279,7 +344,7 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#204a87; vertical-align:sub;&quot;&gt;Uygulama Kategorisi Seçiniz&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#204a87; vertical-align:sub;&quot;&gt;Uygulama Grubu Seçiniz&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
